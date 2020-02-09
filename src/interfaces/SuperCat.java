@@ -3,6 +3,7 @@ package interfaces;
 public class SuperCat implements Ability, Cloneable, Comparable<SuperCat> {
     private String name;
     private double strength;
+    private double weight;
 
     public SuperCat() {
 
@@ -38,7 +39,7 @@ public class SuperCat implements Ability, Cloneable, Comparable<SuperCat> {
     public String toString() {
         return "SuperCat{" +
                 "power=" + strength +
-                ", name='" + name + '\'' +
+                ", name='" + name + '\'' + ", weight=" + weight  +
                 '}';
     }
 
@@ -50,8 +51,14 @@ public class SuperCat implements Ability, Cloneable, Comparable<SuperCat> {
         this.strength = strenght;
     }
 
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
     @Override
     public int compareTo(SuperCat o) {
-        return (int) (strength - o.strength);
+        //return (int) (strength - o.strength);
+       return (int) (weight - o.weight);
+
     }
 }
