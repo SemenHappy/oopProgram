@@ -119,10 +119,64 @@ public class MyArraysHomeWork {
         System.out.println();
         System.out.println(integers.toString());
         System.out.print("Missing first three elements");
-        for (int i = 3; i <integers.size() ; i++) {
+        for (int i = 3; i < integers.size(); i++) {
 
             System.out.print(", " + integers.get(i));
         }
+
+
+        System.out.println();
+        int count1 = 0;
+        System.out.println("Missing first three elements equals 9");
+        for (int i = 0; i < integers.size(); i++) {
+            if (integers.get(i).equals(9)) {
+                count1++;
+                if (count1 > 2) {
+                    System.out.println(integers.get(i));
+                }
+            }
+        }
+        System.out.println();
+
+        Person bob = new Person("Bob", "man", 55);
+        Person jac = new Person("Jac", "man", 22);
+        Person hugo = new Person("Hugo", "man", 18);
+        Person halter = new Person("Halter", "man", 27);
+        Person alex = new Person("Alex", "man", 30);
+        Person any = new Person("Any", "woman", 15);
+        Person lola = new Person("Lola", "woman", 60);
+        Person jany = new Person("Jany", "woman", 18);
+
+        ArrayList<Person> list = new ArrayList<Person>();
+        list.add(bob);
+        list.add(jac);
+        list.add(hugo);
+        list.add(halter);
+        list.add(alex);
+        list.add(any);
+        list.add(lola);
+        list.add(jany);
+        System.out.println(list.toString());
+
+
+
+
+
+
+
+//
+//        System.out.print("First element which can / (3): ");
+//        integers.trimToSize();
+//        for (int i : integers
+//        ) {
+//            if (i % 3 == 0) {
+//                intWithoutTwoElem.add(i);
+//            }
+//            for (int j = 2; j < intWithoutTwoElem.size() ; j++) {
+//                System.out.println(i);
+//            }
+//        }
+
 
     }
 }
