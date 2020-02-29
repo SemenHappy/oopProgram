@@ -1,3 +1,5 @@
+import javax.xml.namespace.QName;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,9 +9,9 @@ public class HomeWorkMap {
         fruits.put("key", new Fruits("watermelon", 10, "green"));
         fruits.put("key1", new Fruits("melon", 7, "yellow"));
         fruits.put("key2", new Fruits("apple", 1, "red"));
-        fruits.put("key3", new Fruits("pineapple", 1, "yellow"));
-        fruits.put("key5", new Fruits("oranges", 2, "orange"));
-        fruits.put("key6", new Fruits("WaterMelon", 6, "yellow"));
+        fruits.put("key33", new Fruits("pineapple", 1, "yellow"));
+        fruits.put("key5555", new Fruits("oranges", 2, "orange"));
+        fruits.put("key662", new Fruits("WaterMelon", 6, "yellow"));
         fruits.put("key7", new Fruits("WaTerMeLon", 6, "yellow"));
 
         System.out.println(fruits.get("key2"));// Получил элемент по ключу
@@ -25,7 +27,7 @@ public class HomeWorkMap {
         System.out.println("Проверка есть ли по ключу: " + "fruitsOnMarket.containsKey(\"key2\") = " + fruitsOnMarket.containsKey("key2"));
         System.out.println();
 
-        System.out.println("Выводим все ключи" +  fruitsOnMarket.keySet());
+        System.out.println("Выводим все ключи" + fruitsOnMarket.keySet());
         System.out.println();
         System.out.println("Выводим значения" + fruitsOnMarket.values());
         System.out.println();
@@ -33,17 +35,66 @@ public class HomeWorkMap {
         System.out.println();
         System.out.println(fruitsOnMarket.size());
         System.out.println("Выводим пару Ключ-Значение: ");
-        for (Map.Entry entry: fruitsOnMarket.entrySet()) {
+        for (Map.Entry entry : fruitsOnMarket.entrySet()) {
 
             System.out.println(entry);
+            System.out.println();
         }
 
-        for(String name : fruitsOnMarket.keySet()){
 
-
+        ArrayList<String> key = new ArrayList<>();
+        int count = 0;
+        for (String name : fruitsOnMarket.keySet()) {
+            if (name.length() > 5) {
+                key.add(name);
+                count++;
+            }
 
         }
+        System.out.println("Ключи которые больше 6" + key + "Количество: " + count);
+        System.out.println();
+
+
+        int count1 = 0;
+        for (Fruits name : fruitsOnMarket.values()) {
+            if (name.getName().length() > 5) {
+                count1++;
+            }
+        }
+        System.out.println("Количество фруктов чей вес больше 5: " + count1);
+        System.out.println();
+
+
+        int count2 = 0;
+        for (Fruits name : fruitsOnMarket.values()
+        ) {
+            if (name.getName().equalsIgnoreCase("watermelon")) {
+                count2++;
+                if (count2 < 2) {
+                    System.out.println("Возращаем элемент значение которого арбуз или Арбуз или АРбУз_.: " + name);
+                }
+
+
+            }
+        }
+        System.out.println();
+
+        Map<String, Fruits> value = new HashMap<>();
+        int count3 = 0;
+        for (Fruits name : fruitsOnMarket.values()) {
+            if (name.getName().equalsIgnoreCase("watermelon")) {
+
+                count3++;
+
+                if (count3 > 2) {
+                    System.out.println(value.values());
+
+                    break;
+                }
+            }
+
+        }
+
 
     }
-
 }

@@ -1,8 +1,8 @@
 public class Fruits {
 
-       private String name;
-       private int weight;
-       private String colour;
+    private String name;
+    private int weight;
+    private String colour;
 
     public Fruits(String name, int weight, String colour) {
         this.name = name;
@@ -42,4 +42,6 @@ public class Fruits {
                 ", colour='" + colour + '\'' +
                 '}';
     }
+
+
 }
